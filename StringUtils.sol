@@ -2,16 +2,16 @@ pragma solidity >=0.5.0;
 
 library StringUtils {
 
-    function concat( string memory str, string memory a) internal pure returns (string memory) {
+    function concat(string memory str, string memory a) internal pure returns string memory) {
         return string(abi.encodePacked(str,a));
     }
 
-    function concat( string memory str, address a) internal pure returns (string memory) {
+    function concat(string memory str, address a) internal pure returns string memory) {
         bytes memory b =abi.encodePacked(str, toString(a));
         return string(b);
     }
 
-    function concat( string memory str, uint a) internal pure returns (string memory) {
+    function concat(string memory str, uint a) internal pure returns (string memory) {
         bytes memory b =abi.encodePacked(str, toString(a));
         return string(b);
     }
@@ -56,5 +56,14 @@ library StringUtils {
             _i /= 10;
         }
         return string(bstr);
+    }
+
+    function equal(string memory a, string memory b) internal pure returns (bool) {
+        if (bytes(a).length != bytes(b).length) {
+            return false;
+        }
+        else {
+            return keccak256(bytes(a)) == keccak256(bytes(b));
+        }
     }
 }
