@@ -2,11 +2,11 @@ pragma solidity >=0.5.0;
 
 library StringUtils {
 
-    function concat(string memory str, string memory a) internal pure returns string memory) {
+    function concat(string memory str, string memory a) internal pure returns (string memory) {
         return string(abi.encodePacked(str,a));
     }
 
-    function concat(string memory str, address a) internal pure returns string memory) {
+    function concat(string memory str, address a) internal pure returns (string memory) {
         bytes memory b =abi.encodePacked(str, toString(a));
         return string(b);
     }
