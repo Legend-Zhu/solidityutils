@@ -12,7 +12,7 @@ For more params, use `abi.encodePacked()`
 e.g.
 
 ```solidity
-import "solidity-string-utils/StringUtils.sol";
+import "github.com/Legend-Zhu/solidityutils/StringUtils.sol";
 
     ...
 
